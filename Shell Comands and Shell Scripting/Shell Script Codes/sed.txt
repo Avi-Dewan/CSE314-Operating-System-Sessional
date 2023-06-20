@@ -1,0 +1,50 @@
+`sed` is a powerful command-line utility in Unix-like operating systems that is used for text manipulation. It stands for "stream editor" and operates on a line-by-line basis, allowing you to perform various operations such as search, find and replace, insert, delete, and more on text streams or files. Here's an overview of how to use the `sed` command:
+
+The basic syntax of `sed` is as follows:
+
+```bash
+sed [options] 'script' [file...]
+```
+
+- `script` contains one or more commands that define the operations to be performed on the input.
+- `file` (optional) is the name of the file(s) to process. If no file is specified, `sed` reads from standard input.
+
+Here are some common options that can be used with the `sed` command:
+
+- `-e <script>`: Specifies a script inline.
+- `-f <script-file>`: Specifies a script file containing commands.
+- `-i <extension>`: Edits files in-place, making changes directly to the file. An optional extension can be provided to create a backup file with the specified extension.
+
+Examples:
+
+1. Search and replace a pattern in a file:
+   ```bash
+   sed 's/pattern/replacement/' file.txt
+   ```
+   This will search for the pattern "pattern" in the file `file.txt` and replace it with "replacement" on each matching line.
+
+2. Perform multiple operations using a script file:
+   ```bash
+   sed -f script.sed file.txt
+   ```
+   This will apply a series of sed commands defined in the `script.sed` file to the contents of `file.txt`.
+
+3. Delete lines matching a pattern:
+   ```bash
+   sed '/pattern/d' file.txt
+   ```
+   This will delete all lines containing the pattern "pattern" from `file.txt`.
+
+4. Insert text at a specific line number:
+   ```bash
+   sed '3i\New line' file.txt
+   ```
+   This will insert the text "New line" before line 3 in `file.txt`.
+
+5. Edit files in-place and create a backup with an extension:
+   ```bash
+   sed -i.bak 's/foo/bar/' file.txt
+   ```
+   This will replace all occurrences of "foo" with "bar" in `file.txt` and create a backup file with the extension ".bak".
+
+These are just a few examples of what you can do with `sed`. It supports a wide range of commands, regular expressions, and pattern matching, making it a versatile tool for text manipulation. To explore more advanced usage and options, refer to the `sed` manual (`man sed`) or online resources dedicated to `sed` scripting.

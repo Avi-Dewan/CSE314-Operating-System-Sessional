@@ -1,0 +1,48 @@
+`grep` is a command-line utility in Unix-like operating systems that is used to search for patterns in text. It scans input files or standard input line by line and prints any lines that match the specified pattern. Here's an overview of how to use `grep`:
+
+The basic syntax of `grep` is as follows:
+
+```bash
+grep [options] pattern [file...]
+```
+
+- `pattern` is the regular expression or string you want to search for.
+- `file` (optional) is the name of the file(s) to search. If no file is specified, `grep` reads from standard input.
+
+Here are some common options that can be used with `grep`:
+
+- `-i`: Ignore case (perform case-insensitive matching).
+- `-v`: Invert the match, i.e., show lines that do not match the pattern.
+- `-r` or `-R`: Recursively search directories.
+- `-l`: Only display the names of files that contain a match.
+- `-n`: Display line numbers along with matching lines.
+- `-w`: Match whole words only.
+- `-c`: Count the number of matching lines instead of displaying the lines themselves.
+
+Examples:
+
+1. Searching for a pattern in a file:
+   ```bash
+   grep "example" file.txt
+   ```
+   This will search for the pattern "example" in the file `file.txt` and display the lines that match.
+
+2. Searching for a pattern in multiple files:
+   ```bash
+   grep "pattern" file1.txt file2.txt file3.txt
+   ```
+   This will search for the pattern "pattern" in the specified files and display the matching lines.
+
+3. Searching for a pattern recursively in directories:
+   ```bash
+   grep -r "pattern" directory/
+   ```
+   This will recursively search for the pattern "pattern" in all files under the `directory/` directory and display the matching lines.
+
+4. Ignoring case and displaying line numbers:
+   ```bash
+   grep -i -n "pattern" file.txt
+   ```
+   This will perform a case-insensitive search for the pattern "pattern" in the file `file.txt` and display the matching lines along with their line numbers.
+
+These are just a few examples of how you can use `grep` to search for patterns in files or directories. `grep` offers many more options and advanced search capabilities, so make sure to check the `grep` manual or documentation for further information.
